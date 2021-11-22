@@ -8,6 +8,7 @@ import base.Payment;
 public class Client implements Payment, Discount {
 
     private String name;
+    private String surname;
     private int quantity;
     private double price;
     private final static int DISCOUNT_RATE = 15;
@@ -34,6 +35,14 @@ public class Client implements Payment, Discount {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     // Расчёт платежа, без учета скидки.

@@ -20,6 +20,7 @@ public class ClientController {
         view.getInputs();
 
         String name = model.getName();
+        String surname = model.getSurname();
 
         double paymentInitial = model.calculatePayment(model.getQuantity(), model.getPrice());
         String paymentInitialRounded = Rounder.roundValue(paymentInitial);
@@ -32,6 +33,7 @@ public class ClientController {
 
         String output = "------------------------------\n" +
                 "Имя клиента: " + name + "\n" +
+                "Фамилия клиента: " + surname + "\n" +
                 "Сума покупки (грн.): " + paymentInitialRounded + "\n" +
                 "Сумма скидки (грн.): " + discountRounded + "\n" +
                 "К оплате (грн.): " + paymentRounded;

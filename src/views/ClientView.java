@@ -11,6 +11,7 @@ public class ClientView {
     Client model;
     String title;
     String name;
+    String surname;
     int quantity;
     double price;
     Scanner scanner;
@@ -32,6 +33,11 @@ public class ClientView {
         System.out.print(title);
         name = Validator.validateName(scanner);
         model.setName(name);
+
+        title = "Введите фамилию клиента: ";
+        System.out.print(title);
+        surname = Validator.validateName(scanner);
+        model.setSurname(surname);
 
         title = "Введите количество: ";
         System.out.print(title);
