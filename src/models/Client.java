@@ -53,16 +53,13 @@ public class Client implements Payment, Discount,Tax {
         return quota * price;
     }
 
-    // Расчёт платежа, с учетом скидки.
-    @Override
-    public double calculatePayment(double payment, double discount) {
-        return payment - discount;
-    }
-    // Расчёт платежа, с учетом скидки + скидки
+
+
+    // Расчёт платежа, с учетом скидки + налога
 
     @Override
     public double calculatePayment(double payment, double discount, double tax) {
-        return payment - discount -tax;
+        return payment - discount + tax;
     }
 
     // Расчёт суммы скидки.

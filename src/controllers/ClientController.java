@@ -28,10 +28,11 @@ public class ClientController {
         double discount = model.calculateDiscount(paymentInitial);
         String discountRounded = Rounder.roundValue(discount);
 
-        String paymentRounded = Rounder.roundValue(model
-                .calculatePayment(paymentInitial, discount));
+
         double taxInitial = model.calculateTax(paymentInitial);
         String taxInitialRounded = Rounder.roundValue(taxInitial);
+        String paymentRounded = Rounder.roundValue(model
+                .calculatePayment(paymentInitial, discount,taxInitial));
 
 
         String output = "------------------------------\n" +
@@ -40,7 +41,7 @@ public class ClientController {
                 "Сума покупки (грн.): " + paymentInitialRounded + "\n" +
                 "Сумма скидки (грн.): " + discountRounded + "\n" +
                 "Cумма налога:(грн.) " + taxInitialRounded+"\n" +
-                "К оплате (грн.): " + paymentRounded;
+                "К окончательной оплате с учётом скидки и налога (грн.): " + paymentRounded;
 
         view.getOutput(output);
     }
