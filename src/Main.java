@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Демонстрация работы программы");
+        System.out.println("Модификация проекта, добавлен рассчет налога");
 
         Client model = new Client();
         ClientView view = new ClientView(model);
